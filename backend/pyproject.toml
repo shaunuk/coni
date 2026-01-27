@@ -1,0 +1,9 @@
+[project]
+name = "consensus-backend"
+version = "0.1.0"
+description = "Consensus Engine Backend"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
