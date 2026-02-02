@@ -33,3 +33,9 @@ export async function getSources(versionId: string) {
   if (!res.ok) return [];
   return res.json();
 }
+
+export async function getRecentQuestions(limit: number = 20) {
+  const res = await fetch(`${API_BASE}/api/questions/recent?limit=${limit}`);
+  if (!res.ok) return [];
+  return res.json();
+}

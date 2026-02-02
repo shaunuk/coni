@@ -6,6 +6,7 @@ celery_app = Celery(
     "consensus",
     broker=settings.redis_url,
     backend=settings.redis_url,
+    include=["app.workers.pipeline"],
 )
 
 celery_app.conf.update(

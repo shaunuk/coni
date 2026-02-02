@@ -10,6 +10,10 @@ class GoogleSearchAdapter(BaseAdapter):
         self.cx = cx
         self.base_url = "https://www.googleapis.com/customsearch/v1"
 
+    @property
+    def source_name(self) -> str:
+        return "Google"
+
     async def _call_api(self, question: str) -> dict:
         async with httpx.AsyncClient() as client:
             response = await client.get(

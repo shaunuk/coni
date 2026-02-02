@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.api.questions import router as questions_router
 from app.api.answers import router as answers_router
+from app.api.ws import router as ws_router
 
 app = FastAPI(title="Consensus Engine", version="0.1.0")
 
@@ -18,6 +19,7 @@ app.add_middleware(
 
 app.include_router(questions_router)
 app.include_router(answers_router)
+app.include_router(ws_router)
 
 
 @app.get("/health")
